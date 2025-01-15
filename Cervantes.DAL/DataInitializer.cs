@@ -111,12 +111,12 @@ public class DataInitializer
     {
       var org = new Organization();
       org.Id = 1;
-      org.Name = "PeMDa Tjakrabirawa";
-      org.Url = "https://www.tjakrabirawa.id";
-      org.ContactEmail = "info@tjakrabirawa.id";
-      org.ContactName = "Tjakradev";
-      org.ContactPhone = "+062 823 86 02 7470";
-      org.Description = "PeMDa Platform";
+      org.Name = "Cervantes";
+      org.Url = "https://github.com/CervantesSec";
+      org.ContactEmail = "cervantes@cervantes.com";
+      org.ContactName = "Cervantes";
+      org.ContactPhone = "+034 111 11 11 11";
+      org.Description = "Cervantes Platform";
       organizationManager.Add(org);
       organizationManager.Context.SaveChanges();
     }
@@ -136,14 +136,14 @@ public class DataInitializer
       templateEN.FilePath = "/Attachments/Templates/templateEN.dotx";
       reportTemplateManager.Add(templateEN);
 
-      var templateES = new ReportTemplate();
-      templateES.Id = Guid.NewGuid();
-      templateES.Name = "Default Español";
-      templateES.Description = "Default Spanish Template";
-      templateES.Language = Language.Español;
-      templateES.CreatedDate = DateTime.Now.ToUniversalTime();
-      templateES.FilePath = "/Attachments/Templates/templateES.dotx";
-      reportTemplateManager.Add(templateES);
+      // var templateES = new ReportTemplate();
+      // templateES.Id = Guid.NewGuid();
+      // templateES.Name = "Default Español";
+      // templateES.Description = "Default Spanish Template";
+      // templateES.Language = Language.Español;
+      // templateES.CreatedDate = DateTime.Now.ToUniversalTime();
+      // templateES.FilePath = "/Attachments/Templates/templateES.dotx";
+      // reportTemplateManager.Add(templateES);
 
       reportTemplateManager.Context.SaveChanges();
     }
