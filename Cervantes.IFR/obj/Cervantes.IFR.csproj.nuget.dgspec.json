@@ -1,0 +1,342 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\Repositories\\cervantes\\Cervantes.IFR\\Cervantes.IFR.csproj": {}
+  },
+  "projects": {
+    "E:\\Repositories\\cervantes\\Cervantes.Contracts\\Cervantes.Contracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Repositories\\cervantes\\Cervantes.Contracts\\Cervantes.Contracts.csproj",
+        "projectName": "Cervantes.Contracts",
+        "projectPath": "E:\\Repositories\\cervantes\\Cervantes.Contracts\\Cervantes.Contracts.csproj",
+        "packagesPath": "C:\\Users\\aldovadev\\.nuget\\packages\\",
+        "outputPath": "E:\\Repositories\\cervantes\\Cervantes.Contracts\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\aldovadev\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "E:\\Repositories\\cervantes\\Cervantes.CORE\\Cervantes.CORE.csproj": {
+                "projectPath": "E:\\Repositories\\cervantes\\Cervantes.CORE\\Cervantes.CORE.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Repositories\\cervantes\\Cervantes.CORE\\Cervantes.CORE.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Repositories\\cervantes\\Cervantes.CORE\\Cervantes.CORE.csproj",
+        "projectName": "Cervantes.CORE",
+        "projectPath": "E:\\Repositories\\cervantes\\Cervantes.CORE\\Cervantes.CORE.csproj",
+        "packagesPath": "C:\\Users\\aldovadev\\.nuget\\packages\\",
+        "outputPath": "E:\\Repositories\\cervantes\\Cervantes.CORE\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\aldovadev\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AuthPermissions.AspNetCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[33.0.1, )"
+            },
+            "Microsoft.AspNetCore.Components.Forms": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.AspNetCore.Components.Web": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Pgvector.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[0.2.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Repositories\\cervantes\\Cervantes.IFR\\Cervantes.IFR.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Repositories\\cervantes\\Cervantes.IFR\\Cervantes.IFR.csproj",
+        "projectName": "Cervantes.IFR",
+        "projectPath": "E:\\Repositories\\cervantes\\Cervantes.IFR\\Cervantes.IFR.csproj",
+        "packagesPath": "C:\\Users\\aldovadev\\.nuget\\packages\\",
+        "outputPath": "E:\\Repositories\\cervantes\\Cervantes.IFR\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\aldovadev\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "E:\\Repositories\\cervantes\\Cervantes.Contracts\\Cervantes.Contracts.csproj": {
+                "projectPath": "E:\\Repositories\\cervantes\\Cervantes.Contracts\\Cervantes.Contracts.csproj"
+              },
+              "E:\\Repositories\\cervantes\\Cervantes.CORE\\Cervantes.CORE.csproj": {
+                "projectPath": "E:\\Repositories\\cervantes\\Cervantes.CORE\\Cervantes.CORE.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Atlassian.SDK": {
+              "target": "Package",
+              "version": "[13.0.0, )"
+            },
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[33.0.1, )"
+            },
+            "Html2JiraMarkup": {
+              "target": "Package",
+              "version": "[1.0.4, )"
+            },
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.11.70, )"
+            },
+            "HtmlSanitizer": {
+              "target": "Package",
+              "version": "[8.1.870, )"
+            },
+            "Lost.SemanticKernel.Connectors.Anthropic": {
+              "target": "Package",
+              "version": "[1.25.0-alpha3, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.8.0, )"
+            },
+            "Markdig": {
+              "target": "Package",
+              "version": "[0.38.0, )"
+            },
+            "Microsoft.AspNetCore.Hosting": {
+              "target": "Package",
+              "version": "[2.2.7, )"
+            },
+            "Microsoft.AspNetCore.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Hosting.Server.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Microsoft.KernelMemory.AI.AzureOpenAI": {
+              "target": "Package",
+              "version": "[0.93.241118.1, )"
+            },
+            "Microsoft.KernelMemory.AI.OpenAI": {
+              "target": "Package",
+              "version": "[0.93.241118.1, )"
+            },
+            "Microsoft.KernelMemory.Core": {
+              "target": "Package",
+              "version": "[0.93.241118.1, )"
+            },
+            "Microsoft.KernelMemory.MemoryDb.Postgres": {
+              "target": "Package",
+              "version": "[0.93.241118.1, )"
+            },
+            "Microsoft.SemanticKernel": {
+              "target": "Package",
+              "version": "[1.28.0, )"
+            },
+            "Microsoft.SemanticKernel.Abstractions": {
+              "target": "Package",
+              "version": "[1.28.0, )"
+            },
+            "Microsoft.SemanticKernel.Connectors.Google": {
+              "target": "Package",
+              "version": "[1.28.0-alpha, )"
+            },
+            "Microsoft.SemanticKernel.Connectors.HuggingFace": {
+              "target": "Package",
+              "version": "[1.28.0-preview, )"
+            },
+            "Microsoft.SemanticKernel.Connectors.MistralAI": {
+              "target": "Package",
+              "version": "[1.28.0-alpha, )"
+            },
+            "Microsoft.SemanticKernel.Connectors.Ollama": {
+              "target": "Package",
+              "version": "[1.28.0-alpha, )"
+            },
+            "Microsoft.SemanticKernel.Plugins.Document": {
+              "target": "Package",
+              "version": "[1.28.0-alpha, )"
+            },
+            "Mime-Detective": {
+              "target": "Package",
+              "version": "[24.7.1, )"
+            },
+            "Mime-Detective.Definitions.Exhaustive": {
+              "target": "Package",
+              "version": "[24.7.1, )"
+            },
+            "ReverseMarkdown": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            },
+            "YamlDotNet": {
+              "target": "Package",
+              "version": "[16.1.3, )"
+            },
+            "itext": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
