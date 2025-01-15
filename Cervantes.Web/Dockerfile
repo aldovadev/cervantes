@@ -1,35 +1,30 @@
-﻿FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
-WORKDIR /app
-EXPOSE 80
-EXPOSE 443
-
+﻿# Use the official .NET 6.0 SDK image as the base image
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-WORKDIR /src
-COPY ["Cervantes.Web/Cervantes.Web.csproj", "Cervantes.Web/"]
-COPY ["Cervantes.Application/Cervantes.Application.csproj", "Cervantes.Application/"]
-COPY ["Cervantes.Contracts/Cervantes.Contracts.csproj", "Cervantes.Contracts/"]
-COPY ["Cervantes.CORE/Cervantes.CORE.csproj", "Cervantes.CORE/"]
-COPY ["Cervantes.DAL/Cervantes.DAL.csproj", "Cervantes.DAL/"]
-COPY ["Cervantes.IFR/Cervantes.IFR.csproj", "Cervantes.IFR/"]
-RUN dotnet restore "Cervantes.Web/Cervantes.Web.csproj"
-COPY . .
-WORKDIR "/src/Cervantes.Web"
-RUN dotnet build "Cervantes.Web.csproj" -c Release -o /app/build
 
-FROM build AS publish
-RUN dotnet publish "Cervantes.Web.csproj" -c Release -o /app/publish
-
-FROM base AS final
+# Set the working directory inside the container
 WORKDIR /app
-COPY --from=publish /app/publish .
+
+# Copy the project file and restore any dependencies (via `dotnet restore`)
+COPY *.csproj ./
+RUN dotnet restore
+
+# Copy the rest of the application code
+COPY . ./
+
+# Build the application
+RUN dotnet publish -c Release -o out
+
+# Use the official .NET 6.0 runtime image to run the application
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the published application from the build stage
+COPY --from=build /app/out ./
+
+# Expose the application port (adjust if necessary)
+EXPOSE 80
+
+# Start the application
 ENTRYPOINT ["dotnet", "Cervantes.Web.dll"]
-
-# update packages
-RUN apt-get update -y && apt-get upgrade -y && apt-get autoremove -y
-# create new user with lower privileges
-RUN useradd -ms /bin/bash cervantes
-# change permissions of particular directories
-RUN chown -R cervantes /app/wwwroot
-
-# switch to the newly created user
-USER cervantes
