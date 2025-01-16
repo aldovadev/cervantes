@@ -7,12 +7,12 @@ EXPOSE 443
 # Build stage
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["src/Cervantes.Web/Cervantes.Web.csproj", "Cervantes.Web/"]
-COPY ["src/Cervantes.Application/Cervantes.Application.csproj", "Cervantes.Application/"]
-COPY ["src/Cervantes.Contracts/Cervantes.Contracts.csproj", "Cervantes.Contracts/"]
-COPY ["src/Cervantes.CORE/Cervantes.CORE.csproj", "Cervantes.CORE/"]
-COPY ["src/Cervantes.DAL/Cervantes.DAL.csproj", "Cervantes.DAL/"]
-COPY ["src/Cervantes.IFR/Cervantes.IFR.csproj", "Cervantes.IFR/"]
+COPY ["Cervantes.Web/Cervantes.Web.csproj", "Cervantes.Web/"]
+COPY ["Cervantes.Application/Cervantes.Application.csproj", "Cervantes.Application/"]
+COPY ["Cervantes.Contracts/Cervantes.Contracts.csproj", "Cervantes.Contracts/"]
+COPY ["Cervantes.CORE/Cervantes.CORE.csproj", "Cervantes.CORE/"]
+COPY ["Cervantes.DAL/Cervantes.DAL.csproj", "Cervantes.DAL/"]
+COPY ["Cervantes.IFR/Cervantes.IFR.csproj", "Cervantes.IFR/"]
 RUN dotnet restore "Cervantes.Web/Cervantes.Web.csproj"
 COPY . .
 WORKDIR "/src/Cervantes.Web"
