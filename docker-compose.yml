@@ -10,7 +10,7 @@ services:
       POSTGRES_USER: cervantes
       POSTGRES_PASSWORD: CervantesDBTjakra
     volumes:
-      - tjakra-pemda-data:/var/lib/postgresql/data
+      - pemda-tjakra-data:/var/lib/postgresql/data
     networks:
       - cervantes
 
