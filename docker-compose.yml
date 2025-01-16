@@ -19,7 +19,7 @@ services:
       - cervantes-db
     restart: unless-stopped
     ports:
-      - "10083:80"
+      - "10080:80"
       - "10443:443"
     networks:
       - cervantes
