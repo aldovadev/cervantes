@@ -1,0 +1,58 @@
+version: "3.8"
+services:
+  cervantes-db:
+    container_name: cervantes-db
+    networks:
+      - cervantes
+    image: mesq/cervantes-postgres:dev
+    restart: unless-stopped
+    ports:
+      - "5432:5432" # Allows external access for debugging or development (remove in production)
+    environment:
+      POSTGRES_DB: cervantes
+      POSTGRES_USER: cervantes
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-CervantesDBTjakra} # Use environment variables for sensitive data
+    volumes:
+      - db_data:/var/lib/postgresql/data # Persistent storage
+    healthcheck: # Ensures the database is ready before dependent services start
+      test: ["CMD-SHELL", "pg_isready -U cervantes"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  cervantes-app:
+    container_name: cervantes-app
+    networks:
+      - cervantes
+    image: aldovadev/pemda-tjakra:latest
+    depends_on:
+      cervantes-db:
+        condition: service_healthy # Ensures the app starts only after the database is ready
+    restart: unless-stopped
+    ports:
+      - "10083:80" # HTTP
+      - "10443:443" # HTTPS
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      DATABASE_HOST: cervantes-db # Internal DNS for the database service
+      DATABASE_PORT: 5432
+      DATABASE_NAME: cervantes
+      DATABASE_USER: cervantes
+      DATABASE_PASSWORD: ${POSTGRES_PASSWORD:-CervantesDBTjakra}
+    volumes:
+      - app_logs:/app/logs # Separate volume for application logs
+    healthcheck: # Ensures the application is healthy
+      test: ["CMD-SHELL", "curl -f http://localhost:80/health || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 3
+
+networks:
+  cervantes:
+    driver: bridge
+
+volumes:
+  db_data:
+    driver: local
+  app_logs:
+    driver: local
