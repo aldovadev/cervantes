@@ -1,8 +1,10 @@
-﻿FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+﻿# Base image for runtime
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
+# Build stage
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["Cervantes.Web/Cervantes.Web.csproj", "Cervantes.Web/"]
@@ -16,20 +18,26 @@ COPY . .
 WORKDIR "/src/Cervantes.Web"
 RUN dotnet build "Cervantes.Web.csproj" -c Release -o /app/build
 
+# Publish stage
 FROM build AS publish
 RUN dotnet publish "Cervantes.Web.csproj" -c Release -o /app/publish
 
+# Final runtime image
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Cervantes.Web.dll"]
+RUN apt-get update -y && apt-get upgrade -y && apt-get autoremove -y && apt-get clean
 
-# update packages
-RUN apt-get update -y && apt-get upgrade -y && apt-get autoremove -y
-# create new user with lower privileges
-RUN useradd -ms /bin/bash cervantes
-# change permissions of particular directories
-RUN chown -R cervantes /app/wwwroot
+# Create non-root user
+RUN useradd -ms /bin/bash cervantes && \
+  mkdir -p /app/wwwroot && \
+  chown -R cervantes /app/wwwroot
 
-# switch to the newly created user
+# Switch to non-root user
 USER cervantes
+
+# Set environment
+ENV ASPNETCORE_ENVIRONMENT=Production
+
+# Entry point
+ENTRYPOINT ["dotnet", "Cervantes.Web.dll"]
