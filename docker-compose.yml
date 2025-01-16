@@ -1,7 +1,7 @@
 services:
   cervantes-db:
     container_name: cervantes-db
-    image: mesq/cervantes-postgres:dev
+    image: postgres:13
     restart: unless-stopped
     ports:
       - "5432:5432"
@@ -9,6 +9,8 @@ services:
       POSTGRES_DB: cervantes
       POSTGRES_USER: cervantes
       POSTGRES_PASSWORD: CervantesDBTjakra
+    volumes:
+      - tjakra-pemda-data:/var/lib/postgresql/data
     networks:
       - cervantes
 
@@ -27,3 +29,6 @@ services:
 networks:
   cervantes:
     driver: bridge
+
+volumes:
+  pemda-tjakra-data:
