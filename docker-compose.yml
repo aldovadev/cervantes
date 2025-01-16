@@ -3,8 +3,6 @@ services:
     container_name: cervantes-db
     image: postgres:13
     restart: unless-stopped
-    ports:
-      - "5432:5432"
     environment:
       POSTGRES_DB: cervantes
       POSTGRES_USER: cervantes
